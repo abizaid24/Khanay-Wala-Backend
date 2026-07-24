@@ -1,80 +1,107 @@
+<div align="center">
+
 # 🍽️ KhanayWala AI
 
-> AI-Powered Food Delivery Platform built with **FastAPI, PostgreSQL, React, and Mistral AI**
+### AI-Powered Food Delivery Platform
 
-KhanayWala AI is a modern food delivery platform where restaurant owners can list and manage their restaurants while customers can discover food, place orders, receive AI-powered meal recommendations, and track their orders in real time.
+Built with **Python**, **FastAPI**, **PostgreSQL**, and **Mistral AI**
 
-The platform also includes role-based authentication, restaurant approval workflows, analytics dashboards, verified reviews, and an intelligent AI assistant that helps users discover meals based on their preferences and budget.
+A modern food delivery platform where customers can discover restaurants, receive AI-powered meal recommendations, place orders, and track deliveries, while restaurant owners manage menus and admins oversee platform operations.
+
+<p>
+
+<img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Mistral-AI-orange?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/React-Planned-61DAFB?style=for-the-badge&logo=react"/>
+
+</p>
+
+</div>
 
 ---
 
-# ✨ Features
+# 🚀 Overview
 
-## 👤 Authentication
+KhanayWala AI is a production-style food delivery backend designed with modern backend engineering principles.
+
+The platform enables customers to discover restaurants, order food, receive AI-powered meal recommendations, and track their orders while restaurant owners manage menus and administrators monitor the platform through analytics dashboards.
+
+This project demonstrates scalable backend architecture, role-based authentication, AI integration, and REST API development using Python and FastAPI.
+
+---
+
+# ✨ Key Features
+
+## 🔐 Authentication
 
 - JWT Authentication
-- Refresh Tokens
+- Access & Refresh Tokens
 - Role-Based Authorization
-- Customer
-- Restaurant Owner
-- Admin
+- Secure Password Hashing
+
+### User Roles
+
+- 👤 Customer
+- 🍽 Restaurant Owner
+- 👨‍💼 Administrator
 
 ---
 
-## 🍔 Restaurant Management
+## 🍽 Restaurant Management
 
 - Restaurant Registration
-- Admin Approval Workflow
-- Restaurant Search
+- Restaurant Approval Workflow
 - Categories
 - Restaurant Profiles
+- Search Restaurants
 
 ---
 
 ## 🍕 Menu Management
 
-- Food Categories
 - Menu CRUD
-- Food Images
-- Pricing
-- Search Foods
+- Food Categories
+- Image Support
+- Price Management
+- Search Menu Items
 
 ---
 
-## 🛒 Shopping Cart
+## 🛒 Smart Ordering
 
 - Single Restaurant Cart
 - Quantity Management
 - Automatic Price Calculation
 - Checkout
+- Order History
 
 ---
 
-## 📦 Order Management
+## 📦 Order Tracking
 
-- Place Orders
-- Order History
-- Live Status Tracking
+Order lifecycle:
 
-Order Flow
-
+```text
 Pending
-
-↓
-
+   │
 Preparing
-
-↓
-
+   │
 Out for Delivery
-
-↓
-
+   │
 Delivered
 
 or
 
 Cancelled
+```
 
 ---
 
@@ -82,23 +109,22 @@ Cancelled
 
 Powered by **Mistral AI**
 
-The AI Assistant can:
+The assistant can:
 
 - Recommend meals
-- Suggest food by budget
+- Suggest foods within a budget
 - Recommend cuisines
-- Help customers choose meals
-- Remember previous conversation context
+- Personalize food choices
+- Maintain conversation context
 
 ---
 
-## ⭐ Reviews
+## ⭐ Reviews & Ratings
 
-Verified Purchase Reviews
-
-- Ratings
-- Comments
+- Verified Purchase Reviews
 - One Review Per Delivered Order
+- Ratings
+- Customer Feedback
 
 ---
 
@@ -110,8 +136,7 @@ Verified Purchase Reviews
 - Total Restaurants
 - Total Orders
 - Revenue Analytics
-- Restaurant Management
-- User Management
+- Platform Insights
 
 ### Restaurant Dashboard
 
@@ -122,98 +147,115 @@ Verified Purchase Reviews
 
 ---
 
-# 🛠 Tech Stack
+# 🏗 System Architecture
 
-## Backend
-
-- FastAPI
-- SQLAlchemy
-- Alembic
-- PostgreSQL
-- JWT Authentication
-- Pydantic
-
-## AI
-
-- Mistral AI API
-
-## Database
-
-- PostgreSQL (Neon)
-
-## Deployment
-
-- Railway
-
-## Frontend (Planned)
-
-- React
-- Vite
-- TailwindCSS
-- Shadcn UI
-
----
-
-# 📁 Project Structure
-
-```
-app/
-│
-├── api/
-├── auth/
-├── core/
-├── crud/
-├── db/
-├── models/
-├── schemas/
-├── ai/
-├── migrations/
-└── main.py
+```text
+                    Client Applications
+                           │
+                           ▼
+                    FastAPI REST API
+                           │
+      ┌──────────────┬───────────────┬─────────────┐
+      │              │               │
+ Authentication   Restaurant API   AI Assistant
+      │              │               │
+      └──────────────┼───────────────┘
+                     │
+              Business Services
+                     │
+                     ▼
+                 PostgreSQL
 ```
 
 ---
 
-# ⚙️ Installation
+# 🛠 Technology Stack
 
-Clone Repository
+| Category | Technologies |
+|-----------|--------------|
+| Language | Python 3.12 |
+| Framework | FastAPI |
+| ORM | SQLAlchemy |
+| Database | PostgreSQL (Neon) |
+| Validation | Pydantic |
+| Authentication | JWT |
+| AI | Mistral AI |
+| Migrations | Alembic |
+| Deployment | Railway |
+| Frontend | React (Planned) |
+
+---
+
+# 📂 Project Structure
 
 ```bash
-git clone https://github.com/yourusername/khanaywala-ai.git
+khanaywala-ai/
+│
+├── app/
+│   ├── api/
+│   ├── auth/
+│   ├── core/
+│   ├── crud/
+│   ├── db/
+│   ├── models/
+│   ├── schemas/
+│   ├── ai/
+│   ├── migrations/
+│   └── main.py
+│
+├── requirements.txt
+├── alembic.ini
+├── .env.example
+└── README.md
+```
+
+---
+
+# ⚡ Quick Start
+
+## Clone Repository
+
+```bash
+git clone https://github.com/abizaid24/khanaywala-ai.git
 
 cd khanaywala-ai
 ```
 
-Create Virtual Environment
+---
 
-```bash
-python -m venv venv
+## Create Virtual Environment
+
+### Windows
+
+```powershell
+python -m venv .venv
+
+.\.venv\Scripts\activate
 ```
 
-Activate
-
-Windows
+### Linux / macOS
 
 ```bash
-venv\Scripts\activate
+python3 -m venv .venv
+
+source .venv/bin/activate
 ```
 
-Linux / Mac
+---
+
+## Install Dependencies
 
 ```bash
-source venv/bin/activate
-```
+pip install --upgrade pip
 
-Install Dependencies
-
-```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-# 🔐 Environment Variables
+## Configure Environment
 
-Create `.env`
+Create a `.env` file.
 
 ```env
 DATABASE_URL=
@@ -229,7 +271,7 @@ FRONTEND_URL=
 
 ---
 
-# 🗄 Database Migration
+## Run Database Migrations
 
 ```bash
 alembic upgrade head
@@ -237,122 +279,125 @@ alembic upgrade head
 
 ---
 
-# ▶️ Run Server
+## Start Server
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Server
+Server:
 
 ```
 http://127.0.0.1:8000
 ```
 
-Swagger Docs
+Swagger Documentation:
 
 ```
-/docs
+http://127.0.0.1:8000/docs
 ```
 
 ---
 
 # 👥 User Roles
 
-### Customer
+## 👤 Customer
 
 - Browse Restaurants
-- AI Recommendations
-- Add to Cart
-- Checkout
-- Reviews
+- AI Meal Recommendations
+- Place Orders
+- Track Deliveries
+- Reviews & Ratings
 
-### Restaurant Owner
+---
 
-- Create Restaurant
+## 🍽 Restaurant Owner
+
+- Register Restaurant
 - Manage Menu
 - Receive Orders
-- Dashboard
+- Analytics Dashboard
 
-### Admin
+---
+
+## 👨‍💼 Administrator
 
 - Approve Restaurants
 - Manage Users
-- Analytics
-- Platform Control
+- Revenue Analytics
+- Platform Management
 
 ---
 
-# 🚀 Deployment
+# 📸 Screenshots
 
-Backend
+Add screenshots here:
 
-- Railway
-
-Database
-
-- Neon PostgreSQL
-
-Frontend
-
-- Vercel
+- Home Page
+- Restaurant Listing
+- Restaurant Dashboard
+- Admin Dashboard
+- AI Food Assistant
+- Swagger API
+- Order Tracking
 
 ---
 
-# 📈 Development Roadmap
+# 🚀 Roadmap
 
-## ✅ Phase 1
+### ✅ Completed
 
-Authentication
+- JWT Authentication
+- Restaurant Management
+- Menu Management
+- Shopping Cart
+- Ordering System
+- AI Food Assistant
+- Analytics Dashboard
 
-## ✅ Phase 2
+### 🔜 Planned
 
-Restaurant & Menu
-
-## ✅ Phase 3
-
-Cart & Ordering
-
-## ✅ Phase 4
-
-AI Chat Assistant
-
-## ✅ Phase 5
-
-Analytics Dashboard
-
-## 🔜 Phase 6
-
-React Frontend
-
-## 🔜 Phase 7
-
-Payment Gateway
-
-## 🔜 Phase 8
-
-Real-Time Order Tracking
+- React Frontend
+- Stripe Payments
+- Live Order Tracking
+- Push Notifications
+- Google Maps Integration
+- Docker Deployment
+- CI/CD Pipeline
+- Recommendation Engine Improvements
 
 ---
 
-# 📚 API Documentation
+# 🌟 Why KhanayWala AI?
 
-Interactive API Documentation is available via Swagger.
+KhanayWala AI demonstrates production-ready backend engineering by combining secure authentication, scalable REST APIs, AI-powered recommendations, modular architecture, and role-based workflows into a modern food delivery platform.
 
-```
-/docs
-```
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome.
-
-Fork the repository, create a feature branch, and submit a Pull Request.
+This project showcases backend development best practices using Python and FastAPI while integrating conversational AI into a real-world business application.
 
 ---
 
 # 📄 License
 
-This project is licensed under the MIT License.
+Licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+## Hafiz Abi Zaid
+
+**Python Backend Developer • FastAPI • Agentic AI**
+
+📧 **hafizabizaid@gmail.com**
+
+🌐 **https://github.com/abizaid24**
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project useful, consider giving it a Star!
+
+Building scalable backend systems with Python, FastAPI & AI.
+
+</div>
